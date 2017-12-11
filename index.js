@@ -1,14 +1,15 @@
 var express = require('express'),
 	routes = require('./routes'),
-	http = require('http'),
+	//http = require('http'),
 	path = require('path'),
 	app = express(),
-	server = http.createServer(app),
+	//server = http.createServer(app),
+	server = require('http').createServer(app),
 	io = require('socket.io').listen(server),
 	Timer = require('./timer.js').Timer,
 	timer = new Timer();
 
-
+server.listen(process.env.PORT || 8080);
 // all environments
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');

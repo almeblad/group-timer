@@ -56,7 +56,7 @@
 ;(function() {
 
 	var timer = new Timer(),
-		socket = io.connect('http://localhost:3000');
+		socket = io.connect('https://young-journey-48824.herokuapp.com');
 	
 	socket.on('currentEndTime', function (data) {
 		//this is the full date time in ms.
